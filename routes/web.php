@@ -67,5 +67,5 @@ Route::post('users/delete/{id}', [UserController::class, 'destroy']);
 
 Route::post('users/edit/{id}', [UserController::class, 'edit']);
 
-Route::post('users/update', [UserController::class, 'update']);
+Route::put('users/update/{id}', [UserController::class, 'update']);
 

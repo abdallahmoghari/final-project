@@ -11,8 +11,9 @@
             </div>
             <div class="card-body">
                 <!-- Update User Form -->
-                <form action="{{ url('users/update') }}" method="POST">
+                <form action="{{ url('/users/update/' . $user->id) }}" method="POST">
                     @csrf
+                    @method('PUT')
                     <input type="hidden" name="id" value="{{ $user->id }}">
 
                     <!-- User Name -->
@@ -95,7 +96,7 @@
                                     </button>
                                 </form>
 
-                                <form action="{{ url('users/edit/' . $user->id) }}" method="POST" class="d-inline">
+                                <form action="{{ url('/users/edit/' . $user->id) }}" method="POST" class="d-inline">
                                     @csrf
                                     <button type="submit" class="btn btn-info">
                                         <i class="fa fa-edit me-2"></i>Edit
